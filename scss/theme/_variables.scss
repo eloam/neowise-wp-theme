@@ -1,0 +1,61 @@
+// Couleurs
+$colors: (
+    "primary": #dc3545, 
+    "secondary": #323232,
+    "light": #b2b2b2,
+    "dark": #656565,
+    "black": #000,
+    "white": #fff,
+    "gray-050": #f2f2f2,
+    "gray-100": #e5e5e5,
+    "gray-150": #d9d9d9,
+    "gray-200": #cccccc,
+    "gray-250": #bfbfbf,
+    "gray-300": #b2b2b2,
+    "gray-350": #a5a5a5,
+    "gray-400": #999999,
+    "gray-450": #8c8c8c,
+    "gray-500": #7f7f7f,
+    "gray-550": #727272,
+    "gray-600": #656565,
+    "gray-650": #595959,
+    "gray-700": #4c4c4c,
+    "gray-750": #3f3f3f,
+    "gray-800": #323232,
+    "gray-850": #252525,
+    "gray-900": #191919,
+    "gray-950": #0d0d0d,
+    "bluegray-100": #e1e5ee,
+    "bluegray-200": #c0c9db,
+    "bluegray-300": #a0adc9,
+    "bluegray-400": #7f92b6,
+    "bluegray-500": #5f76a4,
+    "bluegray-600": #4b5e84,
+    "bluegray-700": #394764,
+    "bluegray-800": #263043,
+    "bluegray-900": #141923
+);
+
+
+
+// Responsive
+$breakpoints: (
+    xs: 0,
+    sm: 650px,
+    md: 900px,
+    lg: 1120px
+);
+
+
+
+
+// Ombres
+$shadow-primary: 0 8px 60px 0 rgba(103, 151, 255, 0.11),
+                 0 12px 90px 0 rgba(103, 151, 255, 0.11);
+$shadows: (
+    primary: $shadow-primary
+);
+
+// Fonts
+$fonts: 'Lato', helvetica, arial, sans-serif;
+

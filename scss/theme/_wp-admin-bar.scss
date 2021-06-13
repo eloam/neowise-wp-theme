@@ -1,0 +1,14 @@
+body.admin-bar {
+    .header-menu-component {
+        top: 32px;
+    }
+}
+
+
+@media screen and (max-width: 782px) {
+    body.admin-bar {
+        .header-menu-component {
+            top: 46px;
+        }
+    }
+}

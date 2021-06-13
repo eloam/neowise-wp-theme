@@ -1,0 +1,297 @@
+@import "./scss/theme/utilities";
+@import "./scss/theme/variables";
+
+$bp-md: breakpoint(md);
+$bp-lg: breakpoint(lg);
+
+$d: 700ms;
+$e: cubic-bezier(0.19, 1, 0.22, 1);
+
+.categories-list-component {
+  background: color(gray-900);
+
+  .help-title, .help-content {
+    color: color("white");
+  }
+
+  @mixin button-scroll {
+    .button-scroll {
+      align-items: center;
+      bottom: 0;
+      color: white;
+      display: flex;
+      font-family: "Font Awesome 5 Pro";
+      font-style: normal;
+      font-weight: 300;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      z-index: 9;
+
+      @media (hover: none) {
+        display: none;
+      }
+
+      &:hover {
+        &::after {
+          background-color: color(primary) !important;
+          cursor: pointer;
+        }
+      }
+
+      &.left {
+        left: 0;
+
+        &::after {
+          content: "\f053";
+        }
+      }
+
+      &.right {
+        right: 0;
+
+        &::after {
+          content: "\f054";
+        }
+      }
+
+      &.left::after,
+      &.right::after {
+        background-color: rgba(black, 0.75);
+        padding: 2rem 1rem;
+        pointer-events: all;
+      }
+    }
+  }
+
+  @mixin containers {
+    .overflow-wrapper {
+      overflow-x: hidden;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+
+      @media (hover: none) {
+        overflow-x: auto;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .cards {
+        display: inline-flex;
+        margin: 0 auto;
+        user-select: none;
+
+        @content;
+      }
+    }
+  }
+
+  @mixin card {
+    .category-card {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      margin: 0 0.5rem;
+      padding: 1rem;
+      width: 250px;
+      height: 250px;
+      text-align: center;
+      color: whitesmoke;
+      background-color: whitesmoke;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+        0 16px 16px rgba(0, 0, 0, 0.1);
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 1rem;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200%;
+        pointer-events: none;
+        background-image: linear-gradient(
+          to bottom,
+          hsla(0, 0%, 0%, 0) 0%,
+          hsla(0, 0%, 0%, 0.009) 11.7%,
+          hsla(0, 0%, 0%, 0.034) 22.1%,
+          hsla(0, 0%, 0%, 0.072) 31.2%,
+          hsla(0, 0%, 0%, 0.123) 39.4%,
+          hsla(0, 0%, 0%, 0.182) 46.6%,
+          hsla(0, 0%, 0%, 0.249) 53.1%,
+          hsla(0, 0%, 0%, 0.32) 58.9%,
+          hsla(0, 0%, 0%, 0.394) 64.3%,
+          hsla(0, 0%, 0%, 0.468) 69.3%,
+          hsla(0, 0%, 0%, 0.54) 74.1%,
+          hsla(0, 0%, 0%, 0.607) 78.8%,
+          hsla(0, 0%, 0%, 0.668) 83.6%,
+          hsla(0, 0%, 0%, 0.721) 88.7%,
+          hsla(0, 0%, 0%, 0.762) 94.1%,
+          hsla(0, 0%, 0%, 0.79) 100%
+        );
+        transform: translateY(-50%);
+        transition: transform calc(#{$d} * 2) $e;
+      }
+
+      @content;
+    }
+  }
+
+  // Image d'arrière plan de la carte
+  @mixin card-background {
+    .card-bg {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110%;
+      background-size: cover;
+      background-position: center;
+      transition: transform calc(#{$d} * 1.5) $e;
+      pointer-events: none;
+    }
+  }
+
+  // Contenu de la carte
+  @mixin card-body {
+    .body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      transition: transform #{$d} #{$e};
+      z-index: 1;
+
+      > * + * {
+        margin-top: 1rem;
+      }
+
+      // Titre
+      .title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 1.2;
+      }
+
+      // Description
+      .content {
+        font-size: 1.125rem;
+        font-style: italic;
+        line-height: 1.35;
+      }
+
+      // Bouton de consultation
+      .button-view {
+        cursor: pointer;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.65rem;
+        font-weight: bold;
+        letter-spacing: 0.025rem;
+        text-transform: uppercase;
+        color: white;
+        background-color: color(primary);
+        border: none;
+
+        &:hover {
+          outline: 1px solid white;
+          outline-offset: 3px;
+        }
+      }
+    }
+  }
+
+  .categories-list {
+    position: relative;
+
+    // Style boutons de scroll
+    @include button-scroll;
+    @include containers {
+      @include card {
+        @include card-background;
+        @include card-body;
+      }
+    }
+  }
+
+  @media (min-width: $bp-md) {
+    .categories-list {
+      .overflow-wrapper {
+        .cards {
+          .category-card {
+            height: 300px;
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (hover: hover) and (min-width: $bp-md) {
+    .categories-list {
+      .overflow-wrapper {
+        .cards {
+          .category-card::after {
+            transform: translateY(0);
+          }
+
+          .body {
+            transform: translateY(calc(100% - 4.5rem));
+
+            > *:not(.title) {
+              opacity: 0;
+              transform: translateY(1rem);
+              transition: transform #{$d} #{$e}, opacity #{$d} #{$e};
+            }
+          }
+
+          .category-card:hover,
+          .category-card:focus-within {
+            align-items: center !important;
+
+            .card-bg {
+              transform: translateY(-4%);
+            }
+            
+            &::after {
+              transform: translateY(-50%);
+            }
+
+            .body {
+              transform: translateY(0);
+
+              > *:not(.title) {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: calc(#{$d} / 8);
+              }
+            }
+          }
+
+          .category-card:focus-within {
+            .card-bg &:after,
+            .body,
+            .body > *:not(.title) {
+              transition-duration: 0s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

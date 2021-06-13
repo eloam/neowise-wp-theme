@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 class="help-title">Explorer les catégories</h2>
+    <p class="help-content">Besoin d'aide sur un sujet en particulier ? Nous avons regroupé à cet emplacement tous les sujets !</p>
+    <div class="categories-list">
+        <div class="calc-margin"></div>
+        <div class="button-scroll left"></div>
+        <div class="button-scroll right"></div>
+        <div class="overflow-wrapper">
+            <div class="cards">
+                {% for item in cards %}
+                    <div class="category-card {{ item.class }} ?>">
+                        <div class="card-bg" style="background-image: url({{ item.backgroundImage }})"></div>
+                        <div class="body">
+                            <h2 class="title">{{ item.name }}</h2>
+                            <p class="content">{{ item.desc }}</p>
+                            <button class="button-view" onclick="window.location.href='{{ item.link }}'">Consulter</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

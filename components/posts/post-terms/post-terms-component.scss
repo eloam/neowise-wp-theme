@@ -1,0 +1,30 @@
+@import "./scss/theme/utilities";
+@import "./scss/theme/variables";
+
+.post-terms-component {
+    .term {
+        display: inline-block;
+        text-transform: lowercase;
+        background: color(gray-100);
+        padding: 0.5rem 1rem;
+        margin: .125rem;
+        border-radius: 1rem;
+        color: color('black');
+
+        &::before {
+            content: '#';
+        }
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: color(primary);
+        }
+    }
+}

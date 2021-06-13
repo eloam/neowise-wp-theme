@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {"NwComponents\\": "core/nw-framework/"}
+    },
+    "require": {
+        "timber/timber": "^1.18",
+        "drewm/mailchimp-api": "^2.5"
+    },
+    "config": {
+        "disable-tls": false,
+        "secure-http": true
+    }
+}

@@ -1,0 +1,155 @@
+.categories-list-component {
+  background: #191919; }
+  .categories-list-component .help-title, .categories-list-component .help-content {
+    color: #fff; }
+  .categories-list-component .categories-list {
+    position: relative; }
+    .categories-list-component .categories-list .button-scroll {
+      align-items: center;
+      bottom: 0;
+      color: white;
+      display: flex;
+      font-family: "Font Awesome 5 Pro";
+      font-style: normal;
+      font-weight: 300;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      z-index: 9; }
+      @media (hover: none) {
+        .categories-list-component .categories-list .button-scroll {
+          display: none; } }
+      .categories-list-component .categories-list .button-scroll:hover::after {
+        background-color: #dc3545 !important;
+        cursor: pointer; }
+      .categories-list-component .categories-list .button-scroll.left {
+        left: 0; }
+        .categories-list-component .categories-list .button-scroll.left::after {
+          content: "\f053"; }
+      .categories-list-component .categories-list .button-scroll.right {
+        right: 0; }
+        .categories-list-component .categories-list .button-scroll.right::after {
+          content: "\f054"; }
+      .categories-list-component .categories-list .button-scroll.left::after, .categories-list-component .categories-list .button-scroll.right::after {
+        background-color: rgba(0, 0, 0, 0.75);
+        padding: 2rem 1rem;
+        pointer-events: all; }
+    .categories-list-component .categories-list .overflow-wrapper {
+      overflow-x: hidden;
+      padding-top: 2rem;
+      padding-bottom: 2rem; }
+      @media (hover: none) {
+        .categories-list-component .categories-list .overflow-wrapper {
+          overflow-x: auto; } }
+      .categories-list-component .categories-list .overflow-wrapper * {
+        box-sizing: border-box; }
+      .categories-list-component .categories-list .overflow-wrapper .cards {
+        display: inline-flex;
+        margin: 0 auto;
+        user-select: none; }
+        .categories-list-component .categories-list .overflow-wrapper .cards .category-card {
+          position: relative;
+          display: flex;
+          align-items: flex-end;
+          overflow: hidden;
+          margin: 0 0.5rem;
+          padding: 1rem;
+          width: 250px;
+          height: 250px;
+          text-align: center;
+          color: whitesmoke;
+          background-color: whitesmoke;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1); }
+          .categories-list-component .categories-list .overflow-wrapper .cards .category-card:first-child {
+            margin-left: 0; }
+          .categories-list-component .categories-list .overflow-wrapper .cards .category-card:last-child {
+            margin-right: 1rem; }
+          .categories-list-component .categories-list .overflow-wrapper .cards .category-card::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            pointer-events: none;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.32) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.54) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.79) 100%);
+            transform: translateY(-50%);
+            transition: transform calc(700ms * 2) cubic-bezier(0.19, 1, 0.22, 1); }
+          .categories-list-component .categories-list .overflow-wrapper .cards .category-card .card-bg {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 110%;
+            background-size: cover;
+            background-position: center;
+            transition: transform calc(700ms * 1.5) cubic-bezier(0.19, 1, 0.22, 1);
+            pointer-events: none; }
+          .categories-list-component .categories-list .overflow-wrapper .cards .category-card .body {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: 1; }
+            .categories-list-component .categories-list .overflow-wrapper .cards .category-card .body > * + * {
+              margin-top: 1rem; }
+            .categories-list-component .categories-list .overflow-wrapper .cards .category-card .body .title {
+              font-size: 1.3rem;
+              font-weight: bold;
+              line-height: 1.2; }
+            .categories-list-component .categories-list .overflow-wrapper .cards .category-card .body .content {
+              font-size: 1.125rem;
+              font-style: italic;
+              line-height: 1.35; }
+            .categories-list-component .categories-list .overflow-wrapper .cards .category-card .body .button-view {
+              cursor: pointer;
+              margin-top: 1.5rem;
+              padding: 0.75rem 1.5rem;
+              font-size: 0.65rem;
+              font-weight: bold;
+              letter-spacing: 0.025rem;
+              text-transform: uppercase;
+              color: white;
+              background-color: #dc3545;
+              border: none; }
+              .categories-list-component .categories-list .overflow-wrapper .cards .category-card .body .button-view:hover {
+                outline: 1px solid white;
+                outline-offset: 3px; }
+  @media (min-width: 900px) {
+    .categories-list-component .categories-list .overflow-wrapper .cards .category-card {
+      height: 300px;
+      width: 200px; } }
+  @media (hover: hover) and (min-width: 900px) {
+    .categories-list-component .categories-list .overflow-wrapper .cards .category-card::after {
+      transform: translateY(0); }
+    .categories-list-component .categories-list .overflow-wrapper .cards .body {
+      transform: translateY(calc(100% - 4.5rem)); }
+      .categories-list-component .categories-list .overflow-wrapper .cards .body > *:not(.title) {
+        opacity: 0;
+        transform: translateY(1rem);
+        transition: transform 700ms cubic-bezier(0.19, 1, 0.22, 1), opacity 700ms cubic-bezier(0.19, 1, 0.22, 1); }
+    .categories-list-component .categories-list .overflow-wrapper .cards .category-card:hover,
+    .categories-list-component .categories-list .overflow-wrapper .cards .category-card:focus-within {
+      align-items: center !important; }
+      .categories-list-component .categories-list .overflow-wrapper .cards .category-card:hover .card-bg,
+      .categories-list-component .categories-list .overflow-wrapper .cards .category-card:focus-within .card-bg {
+        transform: translateY(-4%); }
+      .categories-list-component .categories-list .overflow-wrapper .cards .category-card:hover::after,
+      .categories-list-component .categories-list .overflow-wrapper .cards .category-card:focus-within::after {
+        transform: translateY(-50%); }
+      .categories-list-component .categories-list .overflow-wrapper .cards .category-card:hover .body,
+      .categories-list-component .categories-list .overflow-wrapper .cards .category-card:focus-within .body {
+        transform: translateY(0); }
+        .categories-list-component .categories-list .overflow-wrapper .cards .category-card:hover .body > *:not(.title),
+        .categories-list-component .categories-list .overflow-wrapper .cards .category-card:focus-within .body > *:not(.title) {
+          opacity: 1;
+          transform: translateY(0);
+          transition-delay: calc(700ms / 8); }
+    .card-bg .categories-list-component .categories-list .overflow-wrapper .cards .category-card:focus-within:after,
+    .categories-list-component .categories-list .overflow-wrapper .cards .category-card:focus-within .body,
+    .categories-list-component .categories-list .overflow-wrapper .cards .category-card:focus-within .body > *:not(.title) {
+      transition-duration: 0s; } }

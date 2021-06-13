@@ -1,0 +1,11 @@
+@function breakpoint($bp) {
+    @return map-get($breakpoints, $bp);
+}
+
+@function color($color) {
+    @return map-get($colors, $color);
+}
+
+@function shadow($shadow) {
+    @return map-get($shadows, $shadow);
+}

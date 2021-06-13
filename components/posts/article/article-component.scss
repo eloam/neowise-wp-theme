@@ -1,0 +1,73 @@
+@import "./scss/theme/utilities";
+@import "./scss/theme/variables";
+
+.article-component {
+
+  .container {
+    padding: 0;
+    margin: 10rem auto 5rem auto;
+    color: color("black");
+    background: color("white");
+
+    .article-header {
+      display: grid;
+      grid-gap: 2rem;
+      padding: 5rem 2rem;
+
+      .title {
+        text-align: center;
+        font-size: 2.75rem;
+        margin: 0;
+      }
+
+      .details {
+        display: inline-flex;
+        margin: auto;
+
+        @media screen and (max-width: breakpoint(sm)) {
+          display: block;
+          text-align: center;
+        }
+
+        .author,
+        .date,
+        .comments {
+          display: inherit;
+          margin: 0.25rem 1rem;
+
+          i.icon {
+            margin: auto 0.5rem;
+          }
+
+          p.data {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .article-thumbnail {
+      max-width: 100%;
+    }
+
+    .article-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      padding: 2rem;
+      grid-gap: 2rem;
+
+      @media screen and (max-width: breakpoint(md)) {
+        grid-template-columns: 1fr;
+
+        .article-sidebar {
+          display: none;
+        }
+      }
+      
+    }
+
+    .article-categories {
+      padding: 2rem;
+    }
+  }
+}

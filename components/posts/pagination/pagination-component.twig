@@ -1,0 +1,25 @@
+<nav class="pagination" aria-label="pagination">
+    {% if posts.pagination.prev %}
+        <div class="navigation-button">
+            <a href="{{posts.pagination.prev.link}}" class="prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Précédent</a>
+        </div>
+    {% endif %}
+
+    {% for page in posts.pagination.pages %}
+        {% if page.link %}
+            <div class="page-number-button">
+                <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+            </div>
+        {% else %}
+            <div class="page-number-button active">
+                <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    {% if posts.pagination.next %}
+        <div class="navigation-button">
+            <a href="{{posts.pagination.next.link}}" class="next {{posts.pagination.next.link|length ? '' : 'invisible'}}">Suivant</a>
+        </div>
+    {% endif %}
+</nav>

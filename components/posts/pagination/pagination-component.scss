@@ -1,0 +1,40 @@
+@import "./scss/theme/variables";
+@import "./scss/theme/utilities";
+
+.pagination-component {
+    display: flex;
+
+    nav.pagination {
+        display: inline-flex;
+        margin: auto;
+
+        .page-number-button, .navigation-button {
+            background: color(bluegray-100);
+            color: color("white");
+            border-radius: 1rem;
+            cursor: pointer;
+            display: flex;
+            margin: .25rem;
+
+            &.active {
+                background: color(primary);
+
+                a, a:hover {
+                    color: color("white");
+                }
+            }
+    
+            a {
+                color: color("black");
+                font-weight: bold;
+                margin: auto;
+                text-align: center;
+                padding: .5rem 1rem;
+    
+                &:hover {
+                    color: color(primary);
+                }
+            }
+        }
+    }
+}

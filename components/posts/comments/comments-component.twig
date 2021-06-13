@@ -1,0 +1,24 @@
+<div class="container">
+	<section class="content">
+		<h2 class="title">
+			<i class="icon fal fa-comments"></i>
+			<span class="data">{{ post.comments.count }}
+				commentaire(s)</span>
+		</h2>
+		{% for comment in post.comments %}
+			<section class="comment">
+				<div class="comment-header">
+					<div class="avatar">
+						<img src="{{ comment.avatar(48,template_uri~"/img/dude.jpg") }}" alt="Avatar de {{ comment.author.name }}"/>
+					</div>
+					<div class="metadata">
+						<div class="author">{{ comment.author.name }}</div>
+						<div class="date">{{ comment.comment_date|time_ago }}</div>
+					</div>
+				</div>
+				
+				<div class="body">{{ comment.content }}</div>
+			</section>
+		{% endfor %}
+	</section>
+</div>

@@ -1,0 +1,57 @@
+@import "./scss/theme/utilities";
+@import "./scss/theme/variables";
+
+.comments-component {
+
+    .container {
+        padding: 0;
+
+        .content {
+            margin: 5rem auto;
+
+            .title {
+                color: color(primary);
+                font-weight: 300;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                word-spacing: 5px;
+                padding: 0 2rem;
+            }
+
+            .comment {
+                background: color(gray-950);
+                padding: 2rem;
+                margin: 1rem 0;
+
+                .comment-header {
+                    display: flex;
+                    align-items: center;
+
+                    .avatar {
+                        height: 3rem;
+                        width: 3rem;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        border-radius: 1.5rem;
+                    }
+                    
+                    .metadata {
+                        margin-left: 1rem;
+
+                        .author {
+                            font-weight: bold;
+                            font-size: 1.25rem;
+                            line-height: 1.25rem;
+                        }
+        
+                        .date {
+                            color: color(gray-600);
+                            font-size: 0.825rem;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

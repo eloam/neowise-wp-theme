@@ -1,0 +1,27 @@
+<div class="container">
+    <nav class="nav-menu">
+        <div class="nav-header">
+            <a href="{{ homeUrl }}" class="logo-link">
+                <img class="logo" src="{{ logo.src }}" alt="{{ logo.alt }}"></img>
+            </a>
+            <div class="menu-bars"><i class="fal fa-bars"></i></div>
+        </div>
+        <ul class="nav-main">
+            {% for item in headerMenu.items %}
+                <li class="nav-main-item {{ item.classes|join(' ') }}">
+                    <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+                    {% if item.children %}
+                        <ul class="nav-drop">
+                            {% for child in item.children %}
+                                <li class="nav-drop-item">
+                                    <a href="{{ child.link }}">{{ child.title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
+

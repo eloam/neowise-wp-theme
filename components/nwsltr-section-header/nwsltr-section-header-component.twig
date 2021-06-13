@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="body-section">
+		<div class="default-message">
+			<h1 class="title">{{ title }}</h1>
+			<p class="content">{{ content }}</p>
+			<form class="nwsltr-header-signup" method="POST" action="#">
+				<input type="hidden" id="_wpnonce" name="_wpnonce" value="{{ wpNonceValue }}">
+				<input type="hidden" name="action" value="nwsltr_signup">
+				<div class="form">
+					<input name="email-address" class="input-email" type="email" placeholder="Votre adresse email" required>
+					<input type="submit" class="input-button" value="{{ btnSubmitValue }}" data-value="{{ btnSubmitValue }}" data-alt-value="📬">
+				</div>
+			</form>
+		</div>
+		<div class="success-message" style="display:none">
+			<h1 class="title">🎉🎉🎉 Inscription validée !</h1>
+			<p class="content">Vous pouvez ajouter l'adresse email
+				<strong>{{ emailAddress }}</strong>
+				dans votre liste blanche pour être sur de recevoir les prochains emails dans votre boîte de réception !</p>
+		</div>
+		<div class="fail-message" style="display:none">
+			<h1 class="title">📬 Une dernière chose !</h1>
+			<p class="content">Afin de compléter votre inscription, nous avons besoin d'une validation manuelle. Pas de panique ! Il suffit simplement de
+				<a target="_blank" rel="noopener noreferrer" href="{{ urlFormSignup }}">cliquer ici</a>
+				!</p>
+		</div>
+	</div>
+	<div class="hero-section">
+		<img class="image-hero" src="{{ imageUri }}" alt="Newsletter">
+	</div>
+</div>

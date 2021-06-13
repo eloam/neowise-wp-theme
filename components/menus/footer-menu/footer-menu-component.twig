@@ -1,0 +1,10 @@
+<div class="container">
+        <ul class="footer-menu">
+            {% for item in footerMenu.items %}
+                <li class="menu-item {{ item.classes|join(' ') }}">
+                    <a class="menu-link" href="{{ item.link }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>
