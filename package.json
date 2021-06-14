@@ -11,8 +11,8 @@
   },
   "scripts": {
     "start": "npm run watch",
-    "build:style": "node-sass style.scss style.css && node-sass -r components -o components",
-    "build:style-export": "node-sass style.scss style.css --output-style compressed && node-sass -r components -o components --output-style compressed",
+    "build:style": "node-sass style.scss style.css && node-sass -r components -o components && node-sass tailwind.css tailwind.min.css --output-style compressed",
+    "build:style-export": "node-sass style.scss style.css --output-style compressed && node-sass -r components -o components --output-style compressed && node-sass tailwind.css tailwind.min.css --output-style compressed",
     "build:script-export": "uglifyjs-folder components -o nw-components.js",
     "build": "npm run \"build:style\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"

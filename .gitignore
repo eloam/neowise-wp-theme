@@ -1,3 +1,4 @@
 /vendor/
-/components/*.css
+/components/*/*.css
 /node_modules/
+*.min.css

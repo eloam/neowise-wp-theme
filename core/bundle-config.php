@@ -64,6 +64,13 @@ class BundleConfig {
             $deps = false, 
             $ver = '1.0.0'
         );
+
+        wp_enqueue_style(
+            $handle = 'tailwind', 
+            $src = get_template_directory_uri() . '/tailwind.min.css', 
+            $deps = false, 
+            $ver = '1.0.0'
+        );
     }
 }
 
