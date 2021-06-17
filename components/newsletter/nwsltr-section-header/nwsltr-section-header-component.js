@@ -61,32 +61,15 @@ NwsltrSectionHeaderComponent.prototype = {
     },
     
     displaySuccessMessage: function() {
-    
-        const defaultMessagePanel = this.component.el.querySelector('.default-message');
-        const successMessagePanel = this.component.el.querySelector('.success-message');
-    
-        if (defaultMessagePanel) {
-            defaultMessagePanel.style.display = 'none';
-        }
-    
-        if (successMessagePanel) {
-            successMessagePanel.style.display = '';
-        }
-    
+
+        const popupSuccessComponent = ComponentManager.getById(this.data.successPopupComponentId);
+        popupSuccessComponent.show();
     },
     
     displayFailMessage: function() {
         
-        const defaultMessagePanel = this.component.el.querySelector('.default-message');
-        const failMessagePanel = this.component.el.querySelector('.fail-message');
-    
-        if (defaultMessagePanel) {
-            defaultMessagePanel.style.display = 'none';
-        }
-    
-        if (failMessagePanel) {
-            failMessagePanel.style.display = '';
-        }
+        const popupFailComponent = ComponentManager.getById(this.data.failPopupComponentId);
+        popupFailComponent.show();
     }
 };
 

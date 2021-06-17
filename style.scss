@@ -8,14 +8,18 @@ Requires at least: WordPress 5.0
 Version: 1.0.4
 */
 
+body {
+    background: rgb(249, 250, 251);
+}
+
 
 // CSS du thème
-@import './scss/theme/theme.scss';
+//@import './scss/theme/theme.scss';
 
 // Font Awesome
-@import './scss/font-awesome/fontawesome.scss';
+/*@import './scss/font-awesome/fontawesome.scss';
 @import './scss/font-awesome/solid.scss';
 @import './scss/font-awesome/regular.scss';
-@import './scss/font-awesome/light.scss';
+@import './scss/font-awesome/light.scss';*/
 //@import './scss/font-awesome/brands.scss';
 //@import './scss/font-awesome/duotone.scss';

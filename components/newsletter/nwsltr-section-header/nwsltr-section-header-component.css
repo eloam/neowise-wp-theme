@@ -1,8 +1,5 @@
-@import "./scss/theme/utilities";
-@import "./scss/theme/variables";
-
 .nwsltr-section-header-component {
-  padding: 2rem 0;
+  /*  padding: 2rem 0;
  // background: color("white");
 
   .container {
@@ -106,5 +103,4 @@
       }
     }
 
-  }
-}
+  }*/ }

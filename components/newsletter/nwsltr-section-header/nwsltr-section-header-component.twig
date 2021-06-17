@@ -1,19 +1,4 @@
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ]
-  }
-  ```
--->
+<!-- Call-To-Action section -->
 <div class="py-16 sm:py-24">
   <div class="relative sm:py-16">
     <div aria-hidden="true" class="hidden sm:block">
@@ -36,28 +21,33 @@
           </svg>
         </div>
         <div class="relative">
-          <div class="sm:text-center">
-            <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
-              Get notified when we&rsquo;re launching.
-            </h2>
-            <p class="mt-6 mx-auto max-w-2xl text-lg text-indigo-200">
-              Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique pellentesque.
-            </p>
+          <div class="default-message">
+            <div class="sm:text-center">
+              <h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl">
+                {{ title }}
+              </h2>
+              <p class="mt-6 mx-auto max-w-2xl text-lg text-indigo-200">
+                {{ content }}
+              </p>
+            </div>
+            <form method="POST" action="#" class="nwsltr-header-signup mt-12 sm:mx-auto sm:max-w-lg sm:flex">
+              <input type="hidden" id="_wpnonce" name="_wpnonce" value="{{ wpNonceValue }}">
+              <input type="hidden" name="action" value="nwsltr_signup">
+              <div class="form min-w-0 flex-1">
+                <label for="cta_email" class="sr-only">Votre adresse email</label>
+                <input id="cta_email" type="email" class="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600" placeholder="Entrez votre adresse email">
+              </div>
+              <div class="mt-4 sm:mt-0 sm:ml-3">
+                <input type="submit" class="input-button block w-full rounded-md border border-transparent px-5 py-3 bg-indigo-500 text-base font-medium text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10" value="{{ btnSubmitValue }}" data-value="{{ btnSubmitValue }}" data-alt-value="📬">
+              </div>
+            </form>
           </div>
-          <form action="#" class="mt-12 sm:mx-auto sm:max-w-lg sm:flex">
-            <div class="min-w-0 flex-1">
-              <label for="cta_email" class="sr-only">Email address</label>
-              <input id="cta_email" type="email" class="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600" placeholder="Enter your email">
-            </div>
-            <div class="mt-4 sm:mt-0 sm:ml-3">
-              <button type="submit" class="block w-full rounded-md border border-transparent px-5 py-3 bg-indigo-500 text-base font-medium text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600 sm:px-10">Notify me</button>
-            </div>
-          </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 
 

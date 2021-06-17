@@ -1,29 +1,61 @@
-<div class="post-card-wrapper">
-    {% for post in posts %}
-        <div class="post-card">
-            <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-                <section class="article-content">
-                    <a href="{{post.link}}">
-                        <div class="card-img-wrapper">
-                            <div class="card-img" style="background-image: url({{ post.thumbnail.src("large") }})"></div>
-                            <div class="comment">   
-                                <span>{{ post.comments.count }}</span>
-                                <i class="fas fa-comments"></i>
-                            </div>
-                        </div>                      
-                        
-                        <div class="body">
-                            <h1 class="title">{{ post.title }}</h1>
-                            <div class="details">
-                                <span>Par</span> {{post.author.name}} <span>&bull;</span> {{ post.post_date|time_ago }}
-                            </div>
-                            {#<div class="content">
-                                {{ post.preview|excerpt(25) }}
-                            </div>#}
-                        </div>
-                    </a>
-                </section>
-            </article>
-        </div>
-    {% endfor %}
+<div class="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+  <div class="absolute inset-0">
+    <div class="bg-white h-2/3 sm:h-2/3"></div>
+  </div>
+  <div class="relative max-w-7xl mx-auto">
+    <div class="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+      
+      <!-- Post card -->
+      {% for post in posts %}
+        <article id="post-{{ post.ID }}" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+          <div class="flex-shrink-0">
+            <img class="h-48 w-full object-cover" src="{{ post.thumbnail.src("large") }}" alt="">
+          </div>
+          <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+            <div class="flex-1">
+              <p class="text-sm font-medium text-indigo-600">
+                <a href="#" class="hover:underline">
+                  {{ post.category.title }}
+                </a>
+              </p>
+              <a href="{{ post.link }}" class="block mt-2">
+                <p class="text-xl font-semibold text-gray-900">
+                  {{ post.title }}
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                   {{ post.preview|excerpt(20) }}
+                </p>
+              </a>
+            </div>
+            <div class="mt-6 flex items-center">
+              <div class="flex-shrink-0">
+                <a href="{{ post.author.link }}">
+                  <img class="h-10 w-10 rounded-full" src="{{ post.author.avatar({ size: 150 }) }}" alt="{{ post.author.name }}">
+                </a>
+              </div>
+              <div class="ml-3">
+                <p class="text-sm font-medium text-gray-900">
+                  <a href="{{ post.author.link }}" class="hover:underline">
+                    {{ post.author.name }}
+                  </a>
+                </p>
+                <div class="flex space-x-1 text-sm text-gray-500">
+                  <time datetime="{{ post.post_date }}">
+                    {{ post.post_date|time_ago }}
+                  </time>
+                   <span aria-hidden="true">
+                    &middot;
+                  </span>
+                  <span>
+                    <a href="{{ post.link }}#comments">{{ post.comments.count }} commentaire(s)</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+
+    </div>
+  </div>
 </div>

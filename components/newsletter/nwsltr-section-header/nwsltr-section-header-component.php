@@ -31,5 +31,17 @@ class NwsltrSectionHeaderComponent extends Component
     public function render()
     {
         Timber::render($this->info->getFileName(FileTypes::twig), $this->context);
+
+
+        $successPopupComponent = NwComponents::prepare('newsletter/nwsltr-register-successful');
+        $failPopupComponent = NwComponents::prepare('newsletter/nwsltr-register-fail');
+
+        $this->viewData = array(
+            "successPopupComponentId" => $successPopupComponent->info->id,
+            "failPopupComponentId" => $failPopupComponent->info->id
+        );
+
+        NwComponents::load($successPopupComponent);
+        NwComponents::load($failPopupComponent);
     }
 }

@@ -1,0 +1,34 @@
+.comments-component .container {
+  padding: 0; }
+  .comments-component .container .content {
+    margin: 5rem auto; }
+    .comments-component .container .content .title {
+      color: #dc3545;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      word-spacing: 5px;
+      padding: 0 2rem; }
+    .comments-component .container .content .comment {
+      background: #0d0d0d;
+      padding: 2rem;
+      margin: 1rem 0; }
+      .comments-component .container .content .comment .comment-header {
+        display: flex;
+        align-items: center; }
+        .comments-component .container .content .comment .comment-header .avatar {
+          height: 3rem;
+          width: 3rem;
+          box-sizing: border-box;
+          overflow: hidden;
+          border-radius: 1.5rem; }
+        .comments-component .container .content .comment .comment-header .metadata {
+          margin-left: 1rem; }
+          .comments-component .container .content .comment .comment-header .metadata .author {
+            font-weight: bold;
+            font-size: 1.25rem;
+            line-height: 1.25rem; }
+          .comments-component .container .content .comment .comment-header .metadata .date {
+            color: #656565;
+            font-size: 0.825rem;
+            font-style: italic; }

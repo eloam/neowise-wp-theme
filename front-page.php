@@ -10,7 +10,7 @@
 	?>
 
 	<div class="container">
-		<?php NwComponents::call('nwsltr-section-header'); ?>
+		<?php NwComponents::call('newsletter/nwsltr-section-header'); ?>
 		
 		<?php
 			$customQuery = array();

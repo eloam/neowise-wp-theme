@@ -47,7 +47,7 @@ class BundleConfig {
         );
         wp_enqueue_script(
             $handle = 'nw-component', 
-            $src = JS_PATH . 'nw-framework/component.js', 
+            $src = JS_PATH . 'nw-framework/component-info.js', 
             $deps = false, 
             $ver = '1.0.0', 
             $in_footer = true

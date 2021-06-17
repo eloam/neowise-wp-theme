@@ -90,10 +90,14 @@ class Loader {
 
     private function initializeScriptCtor($component, $viewData) {
         // Instanciation du fichier de script du composant
-        wp_add_inline_script($component->info->handleScriptName, sprintf("new %s(ComponentManager.getById('%s'), %s);", 
-            $component->info->className, 
-            $component->info->id,
-            json_encode($viewData)
-        ));
+        wp_add_inline_script($component->info->handleScriptName, 
+            sprintf(
+                "var instanceInfos = ComponentManager.getInfos('%s'); ComponentManager.register(instanceInfos, new %s(instanceInfos, %s));" .
+                "instanceInfos = undefined;", 
+                $component->info->id,
+                $component->info->className, 
+                json_encode($viewData)
+            )
+        );
     }
 }
