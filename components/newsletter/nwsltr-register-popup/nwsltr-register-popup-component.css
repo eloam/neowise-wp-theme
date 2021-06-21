@@ -1,0 +1,17 @@
+.nwsltr-register-popup-component {
+  visibility: hidden;
+  transition: visibility 150ms; }
+  .nwsltr-register-popup-component.show {
+    visibility: visible; }
+    .nwsltr-register-popup-component.show .bg-transition {
+      opacity: 100; }
+    .nwsltr-register-popup-component.show .popup-transition {
+      opacity: 100;
+      transform: scale(100%); }
+  .nwsltr-register-popup-component.hide {
+    visibility: hidden; }
+    .nwsltr-register-popup-component.hide .bg-transition {
+      opacity: 0; }
+    .nwsltr-register-popup-component.hide .popup-transition {
+      opacity: 0;
+      transform: scale(95%); }

@@ -19,7 +19,7 @@ class MailchimpIntegration {
 
         if (isset($_POST['_wpnonce']))  {
             if (wp_verify_nonce($_POST['_wpnonce'], 'nwsltr-nonce')) {
-
+                
                 if (!$this->apiKey || !$this->listId) { wp_send_json_error('Mailchimp not correctly configured.'); }
 
                 $emailAddress = $_POST['email-address'];

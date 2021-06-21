@@ -10,38 +10,24 @@ NwsltrSectionHeaderComponent.prototype = {
         const self = this;
     
         window.addEventListener('DOMContentLoaded', function() {
-            self.changeNwsltrButtonValue();
             self.signUpToNwsltrOnClickEvent();
         });
-    
-        window.addEventListener('resize', function() {
-            self.changeNwsltrButtonValue();
-        });
-    },
-    
-    changeNwsltrButtonValue: function() {
-        
-        const nwsltrSubmitBtn = this.component.el.querySelector('.nwsltr-header-signup .input-button');
-    
-        if (!nwsltrSubmitBtn) { return; }
-    
-        if (window.innerWidth < 576 && nwsltrSubmitBtn.value !== nwsltrSubmitBtn.dataset.altValue) {
-            nwsltrSubmitBtn.value = nwsltrSubmitBtn.dataset.altValue;
-        } else if(window.innerWidth >= 576 && nwsltrSubmitBtn.value !== nwsltrSubmitBtn.dataset.value) {
-            nwsltrSubmitBtn.value = nwsltrSubmitBtn.dataset.value;
-        }
-    
     },
     
     signUpToNwsltrOnClickEvent: function() {
         
         const self = this;
         const form = this.component.el.querySelector('.nwsltr-header-signup');
+
+        const popupComponent = ComponentManager.getById(this.data.popupComponentId);
     
         if (!form) { return; }
     
         form.addEventListener('submit', function (event) {
             event.preventDefault();
+
+            popupComponent.showPending();
+            popupComponent.show();
 
             const formData = new FormData(this);
     
@@ -50,9 +36,18 @@ NwsltrSectionHeaderComponent.prototype = {
 
             request.onload = function() {
                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    self.displaySuccessMessage();
+                    try {
+                        response = JSON.parse(this.response);
+                        if (response.success) {
+                            self.displaySuccessMessage();
+                        } else {
+                            self.displayErrorMessage();
+                        }
+                    } catch (error) {
+                        self.displayErrorMessage();
+                    }
                 } else {
-                    self.displayFailMessage();
+                    self.displayErrorMessage();
                 }
             }
 
@@ -61,15 +56,13 @@ NwsltrSectionHeaderComponent.prototype = {
     },
     
     displaySuccessMessage: function() {
-
-        const popupSuccessComponent = ComponentManager.getById(this.data.successPopupComponentId);
-        popupSuccessComponent.show();
+        const popupComponent = ComponentManager.getById(this.data.popupComponentId);
+        popupComponent.showSucceed();
     },
     
-    displayFailMessage: function() {
-        
-        const popupFailComponent = ComponentManager.getById(this.data.failPopupComponentId);
-        popupFailComponent.show();
+    displayErrorMessage: function() {
+        const popupErrorComponent = ComponentManager.getById(this.data.popupComponentId);
+        popupErrorComponent.showError();
     }
 };
 
