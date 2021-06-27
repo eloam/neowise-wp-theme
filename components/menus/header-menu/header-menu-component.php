@@ -14,11 +14,12 @@ class HeaderMenuComponent extends Component {
         $hasLogo = has_custom_logo();
         $logoId = get_theme_mod('custom_logo');
         $logoSrc = wp_get_attachment_image_src($logoId , 'full')[0] ?? '';
+
         $this->context['logo'] = array('hasLogo' => $hasLogo, 'src' => $logoSrc);
         $this->context['title'] = get_bloginfo('name');
         
         // Home url
-        $this->context['homeUrl'] = get_home_url();
+        $this->context['homeUri'] = get_home_url();
     }
 
     public function render() {

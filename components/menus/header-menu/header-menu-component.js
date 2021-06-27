@@ -13,8 +13,8 @@ const HeaderMenuComponent = function (instance, viewData) {
 HeaderMenuComponent.prototype = {
 
     init: function() {
-        this.menu = this.component.el.querySelector('.menu-bars');
-        this.navMain = this.component.el.querySelector('.nav-main');
+        this.buttonMobileMenu = document.getElementById('button-mobile-menu');
+        this.mobileMenu = document.getElementById('mobile-menu');
 
         this.registerMenuBarsClickEvent();
     },
@@ -23,20 +23,21 @@ HeaderMenuComponent.prototype = {
 
         const self = this;
 
-        this.menu.dataset.state = this.menuStates.closed;
+        this.buttonMobileMenu.addEventListener('click', (e) => {
+            // Gestion de l'ARIA
+            this.buttonMobileMenu.ariaExpanded = this.buttonMobileMenu.ariaExpanded === 'true' ? 'false' : 'true';
 
-        this.menu.addEventListener('click', function () {
-            if (self.menu.dataset.state === self.menuStates.closed) {
-                self.navMain.classList.add('show-menu');
-                self.menu.querySelector('i.fal').classList.replace('fa-bars', 'fa-times');
-                self.component.el.classList.add('fullscreen-menu');
-                self.menu.dataset.state = self.menuStates.open;
-            } else {
-                self.navMain.classList.remove('show-menu');
-                self.menu.querySelector('i.fal').classList.replace('fa-times', 'fa-bars');
-                self.component.el.classList.remove('fullscreen-menu');
-                self.menu.dataset.state = self.menuStates.closed;
-            }
+            // On alterne l'icone du bouton menu (en mobile)
+            this.buttonMobileMenu.querySelectorAll('svg').forEach(item => {
+                item.classList.toggle('block');
+                item.classList.toggle('hidden');
+                // Gestion de l'ARIA
+                item.ariaHidden = item.ariaHidden === 'true' ? 'false' : 'true';
+            });
+
+            // On affiche/masque le menu mobile
+            this.mobileMenu.classList.toggle('block');
+            this.mobileMenu.classList.toggle('hidden');
         });
     }
 

@@ -9,6 +9,9 @@ class FooterMenuComponent extends Component {
 
     public function init() {
         $this->context = Timber::context();
+
+        $themeOptions = get_option('nw_options');
+        $this->context['description'] = $themeOptions['footer_description'];
     }
 
     public function render() {

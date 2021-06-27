@@ -68,15 +68,21 @@ add_theme_support('post-thumbnails');
 // Ajouter automatiquement le titre du site dans l'en-tête du site
 add_theme_support('title-tag');
 
+// Logo
 function custom_logo_setup() {
 	$defaults = array(
-		'height'      => 150,
-		'width'       => 606,
 		'header-text' => array('site-title', 'site-description'),
 	);
 	add_theme_support('custom-logo', $defaults );
 }
 add_action('after_setup_theme', 'custom_logo_setup');
+
+// Support des svg
+function wpc_mime_types($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter('upload_mimes', 'wpc_mime_types');
    
 
 // Page des paramètres du thème
