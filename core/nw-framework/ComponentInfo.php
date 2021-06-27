@@ -10,6 +10,7 @@ class ComponentInfo {
     
     private $id;
     private $name;
+    private $class;
     private $className;
     private $fullName;
     private $relativePath;
@@ -26,6 +27,7 @@ class ComponentInfo {
     public function __get($property) {
         if ($property == 'id')               { return $this->id; }               else
         if ($property == 'name')             { return $this->name; }             else
+        if ($property == 'class')            { return $this->class; }            else
         if ($property == 'className')        { return $this->className; }        else
         if ($property == 'fullName')         { return $this->fullName; }         else
         if ($property == 'relativePath')     { return $this->relativePath; }     else
@@ -37,6 +39,10 @@ class ComponentInfo {
         if ($property == 'handleScriptName') { return $this->name . '-script'; } else
         if ($property == 'handleStyleName')  { return $this->name . '-style'; }  else
         if ($property == 'options')          { return $this->options; }
+    }
+
+    public function __set(string $name, $value) {
+        if ($name == 'class')                { $this->class = $value; }
     }
 
     public function __construct(string $relativeComponentPath, Options $options, bool $throwErrors = false) {

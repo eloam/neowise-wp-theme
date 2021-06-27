@@ -2,17 +2,24 @@
   "name": "neowise",
   "version": "1.0.3",
   "description": "Neowise WP Theme",
-  "dependencies": {},
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1"
+  },
   "devDependencies": {
+    "autoprefixer": "^10.2.6",
     "chokidar-cli": "^2.1.0",
     "node-sass": "^4.14.1",
+    "postcss": "^8.3.5",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.4",
     "uglify-js": "^3.11.2",
     "uglifyjs-folder": "^2.0.0"
   },
   "scripts": {
     "start": "npm run watch",
-    "build:style": "node-sass style.scss style.css && node-sass -r components -o components && node-sass tailwind.css tailwind.min.css --output-style compressed",
-    "build:style-export": "node-sass style.scss style.css --output-style compressed && node-sass -r components -o components --output-style compressed && node-sass tailwind.css tailwind.min.css --output-style compressed",
+    "build:tailwind": "postcss tailwind.css -o tailwind.min.css",
+    "build:style": "node-sass style.scss style.css && node-sass -r components -o components",
+    "build:style-export": "postcss tailwind.css -o tailwind.min.css && node-sass style.scss style.css --output-style compressed && node-sass -r components -o components --output-style compressed && node-sass tailwind.css tailwind.min.css --output-style compressed",
     "build:script-export": "uglifyjs-folder components -o nw-components.js",
     "build": "npm run \"build:style\"",
     "watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial"

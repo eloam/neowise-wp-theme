@@ -31,6 +31,7 @@ class NwsltrSectionHeaderComponent extends Component
 
         $popupComponent = NwComponents::prepare('newsletter/nwsltr-register-popup');
         $this->viewData = array("popupComponentId" => $popupComponent->info->id);
+        $popupComponent->info->class = 'hidden';
         NwComponents::load($popupComponent);
     }
 }

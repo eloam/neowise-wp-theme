@@ -50,8 +50,11 @@ class Loader {
     }
 
     private function includeComponentTemplate(LazyComponent $component, bool $loadComponentFiles): Component {
+        // Gestion des classes CSS additionnels
+        $class = $component->info->class ? ' ' . $component->info->class : '';
+
         // Inclusion du fichier PHP et instanciation de l'objet composant par réflection
-        echo "<div class=\"component {$component->info->fullName}\" data-id=\"{$component->info->id}\" data-name=\"{$component->info->name}\">";
+        echo "<div class=\"component {$component->info->fullName}{$class}\" data-id=\"{$component->info->id}\" data-name=\"{$component->info->name}\">";
         if ($loadComponentFiles) {
             get_template_part($component->info->relativePath . '/' . $component->info->fullName);
         }

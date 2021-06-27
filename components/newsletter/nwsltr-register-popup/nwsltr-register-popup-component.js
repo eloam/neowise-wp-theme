@@ -12,6 +12,9 @@ const NwsltrRegisterPopupComponent = function (instance, viewData) {
 
 NwsltrRegisterPopupComponent.prototype = {
     init: function () {
+        // Pour éviter que la popup apparaisse au chargement de la page
+        this.component.el.classList.remove('hidden');
+
         this.btnCancel = this.component.el.querySelector('button.cancel-action');
         this.btnOk = this.component.el.querySelector('button.ok-action');
 
