@@ -1,7 +1,7 @@
 <div class="flex py-2">
   <div class="m-auto">
     {% for term in post.categories %}
-      <a href="{{ term.link }}" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-pink-100 text-pink-600 hover:text-pink-800">
+      <a href="{{ term.link }}" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-600 hover:text-pink-600">
         {{ term.title }}
       </a>
     {% endfor %}

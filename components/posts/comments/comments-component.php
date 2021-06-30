@@ -10,6 +10,7 @@ class CommentsComponent extends Component {
     public function init() {
         $this->context = Timber::context();
         $this->context['post'] = new Timber\Post();
+        $this->context['add_comment_link'] = '#leave-comment';
     }
 
     public function render() {

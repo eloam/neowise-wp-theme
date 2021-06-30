@@ -1,9 +1,13 @@
-@import "./scss/theme/utilities";
-@import "./scss/theme/variables";
+//@import "./scss/theme/utilities";
+//@import "./scss/theme/variables";
 
 .leave-comment-component {
 
-    .container {
+    textarea, input {
+        border: 1px solid gray;
+    }
+
+  /*  .container {
         padding: 0;
 
         .content {
@@ -37,7 +41,6 @@
 
                 .comment-form {
                     padding: 2rem;
-                    background: color(gray-950);
 
                     .comment-form-comment,
                     .comment-form-author,
@@ -52,5 +55,5 @@
                 }
             }
         }
-    }
+    }*/
 }

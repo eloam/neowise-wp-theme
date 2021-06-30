@@ -1,31 +1,52 @@
-.leave-comment-component .container {
-  padding: 0; }
-  .leave-comment-component .container .content {
-    margin: 5rem auto; }
-    .leave-comment-component .container .content .comment-respond input[type=checkbox] {
-      margin: 0; }
-    .leave-comment-component .container .content .comment-respond textarea {
-      max-width: 100%; }
-    .leave-comment-component .container .content .comment-respond .comment-reply-title {
-      color: #dc3545;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      word-spacing: 5px;
-      padding: 0 2rem;
-      font-size: 1.5rem; }
-      .leave-comment-component .container .content .comment-respond .comment-reply-title::before {
-        content: '\f4ad';
-        font-family: 'Font Awesome 5 Pro';
-        font-weight: 300;
-        margin-right: 0.5rem; }
-    .leave-comment-component .container .content .comment-respond .comment-form {
-      padding: 2rem;
-      background: #0d0d0d; }
-      .leave-comment-component .container .content .comment-respond .comment-form .comment-form-comment,
-      .leave-comment-component .container .content .comment-respond .comment-form .comment-form-author,
-      .leave-comment-component .container .content .comment-respond .comment-form .comment-form-email {
-        display: flex;
-        flex-direction: column; }
-      .leave-comment-component .container .content .comment-respond .comment-form .comment-form-url {
-        display: none; }
+.leave-comment-component {
+  /*  .container {
+        padding: 0;
+
+        .content {
+            margin: 5rem auto;
+
+            .comment-respond {
+                input[type=checkbox] {
+                    margin: 0;
+                }
+
+                textarea {
+                    max-width: 100%;
+                }
+
+                .comment-reply-title {
+                    color: #dc3545;
+                    font-weight: 300;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    word-spacing: 5px;
+                    padding: 0 2rem;
+                    font-size: 1.5rem;
+
+                    &::before {
+                        content: '\f4ad';
+                        font-family: 'Font Awesome 5 Pro';
+                        font-weight: 300;
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                .comment-form {
+                    padding: 2rem;
+
+                    .comment-form-comment,
+                    .comment-form-author,
+                    .comment-form-email {
+                        display: flex;
+                        flex-direction: column;
+                    }
+    
+                    .comment-form-url {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }*/ }
+  .leave-comment-component textarea, .leave-comment-component input {
+    border: 1px solid gray; }
