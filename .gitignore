@@ -1,4 +1,5 @@
 /vendor/
 /components/*/*.css
 /node_modules/
+/export/
 *.min.css

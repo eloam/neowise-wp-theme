@@ -1,11 +1,8 @@
 module.exports = {
-  purge: {
-    enabled: false,
-    content : [
-      './components/**/*.twig',
-      '*.php'
-    ]
-  },
+  purge: [
+    './components/**/*.twig',
+    './**/*.php'
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
