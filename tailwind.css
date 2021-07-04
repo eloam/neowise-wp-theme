@@ -14,16 +14,16 @@
 
 #leave-comment input[type=text],
 #leave-comment textarea {
-    @apply shadow-sm focus:ring-pink-500 focus:border-pink-500 sm:text-sm border-gray-300 rounded-md block outline-none p-2 w-full text-gray-900;
+    @apply shadow-sm sm:text-sm border-gray-600 rounded-md block outline-none p-2 mt-2 w-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:border-pink-500 border-2 transition transition-all;
 }
 
 #leave-comment .form-submit {
-    @apply ml-auto mt-4;
+    @apply sm:ml-auto mt-4;
 }
 
 #leave-comment .comment-form-author,
 #leave-comment .comment-form-email {
-    @apply col-span-1;
+    @apply sm:col-span-1;
 }
 
 #leave-comment .comment-form-url {
