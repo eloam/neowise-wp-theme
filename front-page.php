@@ -4,9 +4,7 @@
 
 	<?php NwComponents::call('newsletter/nwsltr-section-header'); ?>
 	
-	<?php
-		NwComponents::call('posts/posts-card'); 
-	?>
+	<?php NwComponents::call('posts/posts-card'); ?>
 
 	<?php NwComponents::call('posts/pagination'); ?>
 

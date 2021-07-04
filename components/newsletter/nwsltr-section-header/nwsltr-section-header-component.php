@@ -34,4 +34,13 @@ class NwsltrSectionHeaderComponent extends Component
         $popupComponent->info->class = 'hidden';
         NwComponents::load($popupComponent);
     }
+
+    public function guard() {
+        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+        if ($paged == 1) {
+            return true;
+        }
+
+        return false;
+    }
 }

@@ -31,7 +31,10 @@ class Component extends LazyComponent {
         $this->viewData = array();
         
         $this->init();
-        $this->render();
+        
+        if ($this->guard()) {
+            $this->render();
+        }
     }
 
     protected function init() {
@@ -40,5 +43,9 @@ class Component extends LazyComponent {
 
     protected function render() {
         throw new \Exception('Not implemented.');
+    }
+
+    protected function guard() {
+        return true;
     }
 }

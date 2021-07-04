@@ -3,6 +3,29 @@
 @tailwind utilities;
 @tailwind screens;
 
+/* Espace commentaire */
+#leave-comment p {
+    @apply col-span-2;
+}
 
-@import 'tailwind_custom.css';
+#leave-comment h3 {
+    @apply font-medium text-xl text-gray-100 text-lg border-b border-gray-600 pb-2 mb-4;
+}
 
+#leave-comment input[type=text],
+#leave-comment textarea {
+    @apply shadow-sm focus:ring-pink-500 focus:border-pink-500 sm:text-sm border-gray-300 rounded-md block outline-none p-2 w-full text-gray-900;
+}
+
+#leave-comment .form-submit {
+    @apply ml-auto mt-4;
+}
+
+#leave-comment .comment-form-author,
+#leave-comment .comment-form-email {
+    @apply col-span-1;
+}
+
+#leave-comment .comment-form-url {
+    @apply hidden;
+}

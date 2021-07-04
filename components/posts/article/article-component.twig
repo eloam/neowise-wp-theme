@@ -1,5 +1,5 @@
 <article>
-	<div class="relative py-16 bg-white overflow-hidden">
+	<div class="relative py-16 overflow-hidden">
 		<div class="relative px-4 sm:px-6 lg:px-8">
 			<div class="text-lg max-w-prose mx-auto">
 				<h1>
@@ -15,44 +15,3 @@
 		</div>
 	</div>
 </article>
-
-{# 
-
-
-<article>
-	<div class="container">
-		<div class="article-header">
-			<h1 class="title">{{ post.title }}</h1>
-			<div class="details">
-				<div class="author">
-					<i class="icon fal fa-user"></i>
-					<span class="data">{{ post.author.name }}</span>
-				</div>
-				<div class="date">
-					<i class="icon fal fa-clock"></i>
-					<span class="data">{{ post.post_date|time_ago }}</span>
-				</div>
-				{% if comments == true %}
-					<div class="comments">
-						<i class="icon fal fa-comments"></i>
-						<span class="data">{{ post.comments.count }}
-							commentaire(s)</span>
-					</div>
-				{% endif %}
-			</div>
-		</div>
-		<img class="article-thumbnail" src="{{ post.thumbnail.src }}" srcset="{{ post.thumbnail.srcset }}" alt="{{ post.thumbnail.alt }}">
-		<div class="article-wrapper">
-			<div class="article-body">
-				{{post.content}}
-			</div>
-			<aside class="article-sidebar">
-				{{ sidebar }}
-			</aside>
-		</div>
-		<div class="article-categories">
-			{{ function('NwComponents::call', 'posts/post-terms') }}
-		</div>
-	</div>
-</article>
-#}

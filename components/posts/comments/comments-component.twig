@@ -10,7 +10,7 @@
   </div>
 
 	{% for comment in post.comments %}
-		<section class="rounded-lg bg-gray-100 p-8 my-2 ">
+		<section class="rounded-lg bg-white p-8 my-4 shadow-lg border border-gray-200">
       <div class="flex pb-4">
         {# 
         <img class="rounded-full inline-flex w-20 h-20 bg-gray-200 overflow-hidden" src="{{ comment.avatar(80,template_uri~"/img/dude.jpg") }}" alt="Avatar de {{ comment.author.name }}"/>
@@ -22,7 +22,7 @@
           </svg>
         </div>
         <div class="flex flex-col px-4">
-          <h2 class="font-medium title-font text-gray-900 text-lg">{{ comment.author.name }}</h2>
+          <h2 class="font-medium text-gray-900 text-lg">{{ comment.author.name }}</h2>
           <div class="text-gray-400 text-xs tracking-widest uppercase">{{ comment.comment_date|time_ago }}</div>
         </div>
       </div>
